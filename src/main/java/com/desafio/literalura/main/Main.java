@@ -1,9 +1,9 @@
 package com.desafio.literalura.main;
-
 import com.desafio.literalura.model.DatosRespuesta;
+import com.desafio.literalura.repository.IAutorRepository;
+import com.desafio.literalura.repository.ILibroRepository;
 import com.desafio.literalura.service.ConsumoApi;
 import com.desafio.literalura.service.ConvertirDatos;
-
 import java.util.Scanner;
 
 public class Main {
@@ -12,13 +12,15 @@ public class Main {
     private final ConvertirDatos conversor = new ConvertirDatos();
     private final String URL_BASE = "https://gutendex.com/books/?search=";
 
-//    private IAutoresRepository autoresRepository;
-//    private ILibrosRepository librosRepository;
+    // Repositorios para interactuar con la base de datos
+    private IAutorRepository autorRepository;
+    private ILibroRepository libroRepository;
 
-//    public Main(IAutoresRepository autoresRepository, ILibrosRepository librosRepository) {
-//        this.autoresRepository = autoresRepository;
-//        this.librosRepository = librosRepository;
-//    }
+    // Constructor que recibe el repositorio de Libros y Autores para poder interactuar con la base de datos
+    public Main(IAutorRepository autoresRepository, ILibroRepository librosRepository) {
+        this.autorRepository = autoresRepository;
+        this.libroRepository = librosRepository;
+    }
 
     public void muestraMenu () {
         var opcion = -1;
