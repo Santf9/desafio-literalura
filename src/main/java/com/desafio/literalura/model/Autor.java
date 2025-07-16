@@ -1,17 +1,25 @@
 package com.desafio.literalura.model;
-
-import java.util.ArrayList;
+import jakarta.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "autores")
 public class Autor {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
+
     private Integer fechaNacimiento;
+
     private Integer fechaFallecimiento;
 
-    private List<Libro> libros = new ArrayList<>();
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Libro> libros;
 
+    // Constructor vacío requerido por JPA
     public Autor() {
     }
 

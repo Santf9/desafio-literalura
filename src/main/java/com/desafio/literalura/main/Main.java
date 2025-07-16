@@ -26,9 +26,9 @@ public class Main {
         while (opcion != 0) {
             var menu = """
                     ,--.   ,--.  ,--.                  ,---.  ,--.                      \\s
-                    |  |   `--',-'  '-. ,---. ,--.--. /  O  \\|  |,--.,--.,--.--.,--,--.\\s
-                    |  |   ,--.'-.  .-'| .-. :|  .--'|  .-.  ||  ||  ||  ||  .--' ,-.  |\\s
-                    |  '--.|  |  |  |  \\  --.|  |   |  |  | ||  ||  |'  ''  '| | \\'-'|\\s
+                    |  |   `--',-'  '-. ,---. ,--.--. /  O  \\ |  |,--.,--.,--.--.,--,--.\\s
+                    |  |   ,--.'-.  .-'| .-. :|  .--'|  .-. | |  ||  ||  ||  .--' ,-.  |\\s
+                    |  '--.|  |  |  |  \\  --. |  |   |  |  | ||  ||  |'  ''  '| | \\'-'|\\s
                     `-----'`--'  `--'   `----'`--'   `--' `--'`--' `----' `--'   `--`--'\\s
                     
                     1 - | Buscar libros por título | 📕
@@ -68,16 +68,12 @@ public class Main {
 //                case 7:
 //                    estaditicasApi();
 //                    break;
-                case 8:
-                    obtenerDatosLibros();
-                    break;
                 case 0:
                     System.out.println("Cerrando aplicación...");
                     break;
                 default:
                     System.out.println("Opción no válida, intenta de nuevo");
             }
-
         }
     }
 

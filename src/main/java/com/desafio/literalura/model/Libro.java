@@ -1,14 +1,31 @@
 package com.desafio.literalura.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "libros")
 public class Libro {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String titulo;
+
+    @Column(name = "nombre_autor")
     private String nombreAutor;
+
+    @Column(name = "lenguajes")
     private String lenguaje;
+
     private double totalDescargas;
 
+    @ManyToOne
+    @JoinColumn(name = "autor_id", nullable = false)
     private Autor autor;
+
+    // Constructor vacío requerido por JPA
+    public Libro() {
+    }
 
     public Libro(DatosLibro datosLibro, Autor autor) {
         this.titulo = datosLibro.titulo();
