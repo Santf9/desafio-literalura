@@ -1,5 +1,6 @@
 package com.desafio.literalura;
 
+import com.desafio.literalura.main.Main;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ public class LiteraluraApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		System.out.println("Literalura Application has started successfully!");
+		Main main = new Main();
+		main.muestraMenu();
 	}
 }
