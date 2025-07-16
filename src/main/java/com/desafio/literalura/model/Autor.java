@@ -1,12 +1,16 @@
 package com.desafio.literalura.model;
 
-import com.desafio.literalura.dto.DatosAutor;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Autor {
 
+    private Long id;
     private String nombre;
     private Integer fechaNacimiento;
     private Integer fechaFallecimiento;
+
+    private List<Libro> libros = new ArrayList<>();
 
     public Autor() {
     }
@@ -33,6 +37,14 @@ public class Autor {
         this.fechaFallecimiento = fechaFallecimiento;
     }
 
+    public List<Libro> getLibros() {
+        return libros;
+    }
+
+    public void setLibros(List<Libro> libros) {
+        this.libros = libros;
+    }
+
     public Integer getFechaNacimiento() {
         return fechaNacimiento;
     }
@@ -43,9 +55,20 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Autor: " +
-                "nombre='" + nombre + '\'' +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", fechaFallecimiento= " + fechaFallecimiento;
+        StringBuilder librosTitulos = new StringBuilder();
+        for(Libro libro : libros) {
+            librosTitulos.append(libro.getTitulo()).append(", ");
+        }
+
+        // Eliminar la última coma y espacio
+        if (!librosTitulos.isEmpty()) {
+            librosTitulos.setLength(librosTitulos.length() - 2);
+        }
+
+        return "--------------- AUTOR 👨‍🏫 ---------------" + "\n" +
+        "Autor: " + nombre + "\n" +
+                "Fecha de nacimiento: " + fechaNacimiento + "\n" +
+                "Fecha de fallecimiento: " + fechaFallecimiento + "\n" +
+                "Libros: " + librosTitulos + "\n";
     }
 }

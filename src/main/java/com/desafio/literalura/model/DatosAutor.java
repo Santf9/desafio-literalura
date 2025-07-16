@@ -1,4 +1,4 @@
-package com.desafio.literalura.dto;
+package com.desafio.literalura.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
