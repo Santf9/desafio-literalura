@@ -2,7 +2,7 @@
 
 Literalura es una aplicación de terminal desarrollada con Spring Boot que permite a los usuarios buscar, gestionar y obtener información sobre libros y autores utilizando la API de Gutendex (Proyecto Gutenberg).
 
-![Literalura Logo](https://via.placeholder.com/150?text=Literalura)
+![Literalura Logo](src/main/resources/images/literalura-logo.jpg)
 
 ## 🚀 Funcionalidades
 
