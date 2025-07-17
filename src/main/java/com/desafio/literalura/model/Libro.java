@@ -8,15 +8,11 @@ public class Libro {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String titulo;
-
     @Column(name = "nombre_autor")
     private String nombreAutor;
-
     @Column(name = "lenguajes")
     private String lenguaje;
-
     private double totalDescargas;
 
     @ManyToOne

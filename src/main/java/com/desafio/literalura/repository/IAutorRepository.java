@@ -1,8 +1,6 @@
 package com.desafio.literalura.repository;
-
 import com.desafio.literalura.model.Autor;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
 
 public interface IAutorRepository extends JpaRepository<Autor, Long> {
